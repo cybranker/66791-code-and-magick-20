@@ -30,7 +30,7 @@ var getMaxElement = function (arr) {
   return Math.round(maxElement);
 };
 
-var randomNumber = function (min, max) {
+var getRandomNumber = function (min, max) {
   var rand = min - 0.5 + Math.random() * (max - min + 1);
 
   return Math.round(rand);
@@ -58,7 +58,7 @@ window.renderStatistics = function (ctx, players, times) {
     if (players[i] === 'Вы') {
       ctx.fillStyle = 'rgba(255, 0, 0, 1)';
     } else {
-      ctx.fillStyle = 'hsl(240,' + randomNumber(1, 100) + '%,50%)';
+      ctx.fillStyle = 'hsl(240,' + getRandomNumber(1, 100) + '%,50%)';
     }
 
     ctx.fillRect(CLOUD_X + BAR_GAP + (BAR_GAP + BAR_WIDTH) * i, CLOUD_Y + CLOUD_HEIGHT - FONT_GAP - GAP, BAR_WIDTH, -barHeight);
