@@ -55,14 +55,12 @@ var getArrayRandomElement = function (arr) {
 var getArrayWizards = function (quantity) {
   var arr = [];
 
-  if (quantity > 0) {
-    for (var i = 0; i < quantity; i++) {
-      arr.push({
-        name: getArrayRandomElement(WIZARD_NAMES) + ' ' + getArrayRandomElement(WIZARD_SURNAMES),
-        coatColor: getArrayRandomElement(WIZARD_COAT_COLORS),
-        eyesColor: getArrayRandomElement(WIZARD_EYES_COLORS)
-      });
-    }
+  for (var i = 0; i < quantity; i++) {
+    arr.push({
+      name: getArrayRandomElement(WIZARD_NAMES) + ' ' + getArrayRandomElement(WIZARD_SURNAMES),
+      coatColor: getArrayRandomElement(WIZARD_COAT_COLORS),
+      eyesColor: getArrayRandomElement(WIZARD_EYES_COLORS)
+    });
   }
 
   return arr;
