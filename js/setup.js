@@ -137,7 +137,7 @@ setupClose.addEventListener('keydown', function (evt) {
 
 userNameInput.addEventListener('invalid', function () {
   if (userNameInput.validity.valueMissing) {
-    userNameInput.setCustomValidity('Обязательное поле huy');
+    userNameInput.setCustomValidity('Обязательное поле');
   } else {
     userNameInput.setCustomValidity('');
   }
@@ -164,7 +164,7 @@ var eyesColorInput = document.querySelector('input[name="eyes-color"]');
 var fireballColorInput = document.querySelector('input[name="fireball-color"]');
 
 var selectColorPartsWizard = function (part, color, input) {
-  part.style = ((part.matches('.setup-fireball-wrap')) ? 'background: ' : 'fill: ') + color + ';';
+  part.style = ((part.matches('div')) ? 'background: ' : 'fill: ') + color + ';';
   input.value = color;
 };
 
