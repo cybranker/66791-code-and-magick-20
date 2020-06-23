@@ -7,6 +7,7 @@
   var userNameInput = document.querySelector('.setup-user-name');
   var setupTopDefault;
   var setupLeftDefault;
+  var isOpenPopup = false;
 
   var popupEscPressHandler = function (evt) {
     if (evt.key === 'Escape' && document.activeElement !== userNameInput) {
@@ -17,16 +18,21 @@
 
   var openPopup = function () {
     setup.classList.remove('hidden');
-    setupTopDefault = setup.offsetTop;
-    setupLeftDefault = setup.offsetLeft;
+
+    if (!isOpenPopup) {
+      setupTopDefault = setup.offsetTop;
+      setupLeftDefault = setup.offsetLeft;
+    }
 
     document.addEventListener('keydown', popupEscPressHandler);
+    isOpenPopup = true;
   };
 
   var closePopup = function () {
     setup.classList.add('hidden');
     setup.style.top = setupTopDefault + 'px';
     setup.style.left = setupLeftDefault + 'px';
+    isOpenPopup = false;
     document.removeEventListener('keydown', popupEscPressHandler);
   };
 
