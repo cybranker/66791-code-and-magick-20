@@ -55,4 +55,8 @@
       closePopup();
     }
   });
+
+  window.dialog = {
+    closePopup: closePopup
+  };
 })();
